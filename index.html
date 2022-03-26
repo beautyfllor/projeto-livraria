@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ribeye&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/header.css">
+    <link rel="stylesheet" type="text/css" href="./css/faixaPrincipal.css">
+    <link rel="stylesheet" type="text/css" href="./css/produtos.css">
+    <link rel="stylesheet" type="text/css" href="./css/sobre.css">
+    <link rel="stylesheet" type="text/css" href="./css/promocoes.css">
+    <title>Livraria</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="divHeaderTitulo">
+            <p class="headerTitulo">Livraria da Flor</p>
+        </div>
+        <div class="links">
+            <a href="#" class="home">Home</a>
+            <a href="#" class="produtos">Produtos</a>
+            <a href="#" class="promocoes">Promoções</a>
+            <a href="#" class="sobre">Sobre</a>
+            <a href="#" class="destaques">Destaques</a>
+            <a href="#" class="contatos">Contatos</a>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="faixaPrincipal">
+            <div class="imagens">
+                <img src="./img/amor & gelato.png" alt="Amor&Gelato" class="gelato">
+                <img src="./img/amor & sorte.png" alt="Amor&Sorte" class="sorte">
+                <img src="./img/amor & azeitonas.png" alt="Amor&Azeitonas" class="azeitonas">
+            </div>
+            <div class="text">
+                <p class="amor">O amor está no ar!</p>
+                <p class="precoAntigo">R$ 108,50</p>
+                <p class="precoAtual">R$ 95,90</p>
+                <p class="naoPerca">Não perca!</p>
+            </div>
+        </section>
+
+        <section class="produtos">
+            <div class="confira">
+                <p>Confira nossos produtos!</p>
+            </div>
+            <div class="container-filtro-card">
+                <div class="container-filtros">
+                    <input type="text" placeholder="Pesquise..." class="pesquisa">
+                    <div class="filtros">
+                        <p class="pFiltros">Filtros</p>
+                        <div class="divPrecos">
+                            <p class="pPrecos">Preços</p>
+                        </div>
+                        <div class="radios">
+                            <input type="radio" name="rdoPreco" value="15">
+                            <p>Até R$ 15,00</p>
+                            <input type="radio" name="rdoPreco" value="30">
+                            <p>Até R$ 30,00</p>
+                            <input type="radio" name="rdoPreco" value="50">
+                            <p>Acima de R$ 50,00</p>
+                        </div>
+        
+                        <div class="checks">
+                            <input type="checkbox" name="chkComedia" value="comedia">
+                            <p>Comédia</p>
+                            <input type="checkbox" name="chkRomance" value="romance">
+                            <p>Romance</p>
+                            <input type="checkbox" name="chkTerror" value="terror">
+                            <p>Terror</p>
+                            <input type="checkbox" name="chkAutoAjuda" value="autoAjuda">
+                            <p>Auto Ajuda</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card-container-produto">
+                        <div class="cardImage">
+                            <img src="./img/PoderHabito.png" alt="#">
+                        </div>
+                        <div cardText>
+                            <div class="cardTitulo">
+                                <p>Título</p>
+                            </div>
+                            <div class="cardPreco">
+                                <p>R$ 20,00</p>
+                            </div>
+                        </div>
+                        <div class="detalhes">
+                            <a href="#">Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="promocoes" class="promocoes">
+            <div class="divPromocoes">
+                <p>Promoções Incríveis!!</p>
+            </div>
+            <div class="card-container-promocao">
+                <div class="porcentagem">
+                    <p>10%</p>
+                </div>
+                <div class="cardImage">
+                    <img src="./img/amorLivros.png" alt="#">
+                </div>
+                <div cardText>
+                    <div class="cardTitulo">
+                        <p>Título</p>
+                    </div>
+                    <div class="cardPrecoAntigo">
+                        <p>R$ 85,00</p>
+                    </div>
+                    <div class="cardPrecoAtual">
+                        <p>R$ 60,00</p>
+                    </div>
+                </div>
+                <div class="detalhes">
+                    <a href="#">Detalhes</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="sobre">
+            <div class="divSobre">
+                <p class="sobreTitulo">Sobre nós</p>
+                <div class="sobreText">
+                    A Livraria da Flor, foi fundada em 2020, com objetivo 
+                    de espalhar o amor em forma de livros por todo o mundo.
+                </div>
+                <div class="redesSociais">
+                    <a href="https://www.instagram.com/" target="_blank">
+                        <img src="./img/instagram.png" alt="Logo Instagram">
+                    </a>
+                    <a href="https://pt-br.facebook.com/" target="_blank">
+                        <img src="./img/facebook.png" alt="Logo Facebook">
+                    </a>
+                </div>
+            </div>
+
+            <div class="contatos">
+                <p class="contatosTitulo">Alguma dúvida? Contate-nos</p>
+                <div class="nome-email">
+                    <p class="labelNome">Nome</p>
+                    <input type="text" class="nome">
+
+                    <p class="labelEmail">Email</p>
+                    <input type="text" class="email">
+                </div>
+                <div class="divMensagem">
+                    <p class="labelMensagem">Mensagem</p>
+                    <textarea class="mensagem" cols="30" rows="10"></textarea>
+                </div>
+                <button class="botaoEnviar">Enviar</button>
+            </div>
+        </section>
+
+    </main>
+</body>
+
+</html>

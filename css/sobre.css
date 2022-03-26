@@ -1,0 +1,117 @@
+/* .sobre{
+    width: 100vw;
+    height: 26.05%;
+    display: flex;
+}
+
+.divSobre{
+    width: 31.53%;
+    height: 100%;
+    background-color: #1A1A1A;
+}
+
+.sobreTitulo{
+    color: #ffffff;
+    margin-top: 15px;
+    margin-left: 69px;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(50px, 60px, 70px);
+}
+
+.sobreText{
+    width: 62%;
+    height: 47.44%;
+    color: #ffffff;
+    margin-top: 35px;
+    margin-left: 77px;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(20px, 30px, 40px);
+}
+
+.redesSociais{
+    width: 62%;
+    height: 13.07%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 77px;
+}
+
+.contatos{
+    width: 68.47%;
+    height: 100%;
+}
+
+.contatosTitulo{
+    margin-left: 287px;
+    margin-top: 35px;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(20px, 36px, 40px);
+}
+
+.nome-email{
+    width: 87.63%;
+    height: 14.06%;
+    display: flex;
+    margin-top: 24px;
+    margin-left: 46px;
+}
+
+.labelNome, .labelEmail{
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(15px, 20px, 30px);
+}
+
+.nome{
+    width: 32.29%;
+    height: 61.62%;
+    background-color: #1A1A1A;
+    border: none;
+    border-radius: 15px;
+    color: #ffffff;
+}
+
+.email{
+    width: 54.63%;
+    height: 61.62%;
+    background-color: #1A1A1A;
+    border: none;
+    border-radius: 15px;
+    color: #ffffff;
+}
+
+.labelMensagem{
+    margin-top: 20px;
+    margin-left: 46px;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(15px, 20px, 30px);
+}
+
+.mensagem{
+    width: 87.63%;
+    height: 43.32%;
+    margin-left: 46px;
+    resize: none;
+    background-color: #1A1A1A;
+    border: none;
+    border-radius: 15px;
+    color: #ffffff;
+}
+
+.botaoEnviar{
+    width: 87.63%;
+    height: 9.94%;
+    margin-top: 49px;
+    margin-left: 46px;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(20px, 30px, 40px);
+    background-color: #1A1A1A;
+    border: none;
+    border-radius: 15px;
+}
+
+.botaoEnviar:hover{
+    background-color: #A02582;
+} */
+

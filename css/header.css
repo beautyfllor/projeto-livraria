@@ -1,0 +1,40 @@
+header{
+    width: 100vw;
+    height: auto;
+    background-color: #4C1A3F;
+    display: flex;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.divHeaderTitulo{
+    width: auto;
+    height: 51.37%;
+    /* background-color: aquamarine; */
+    margin-top: 45px;
+    margin-left: 36px;
+    margin-right: 150px;
+}
+
+.headerTitulo{
+    color: #ffff;
+    font-family: "Roboto", sans-serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.links{
+    width: 39.58%;
+    width: 50%;
+    height: 20.55%;
+    /* background-color: bisque; */
+    margin-top: 90px;
+    margin-right: 25px;
+}
+
+.home, .produtos, .promocoes, .sobre, .destaques, .contatos{
+    color: #ffff;
+    padding-left: 15px;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-size: clamp(1rem, 5vw, 1.5rem);
+}

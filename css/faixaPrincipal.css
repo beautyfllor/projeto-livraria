@@ -2,6 +2,7 @@
     width: 100vw;
     height: 64vh;
     display: flex;
+    margin-bottom: 27px;
     background-color: #000000;
 }
 

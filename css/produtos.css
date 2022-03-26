@@ -1,3 +1,82 @@
-/* .produtos{
+.produtos{
     width: 100vw;
-} */
+    height: auto;
+    background-color: #ffffff;
+}
+
+.confira{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(1.5rem, 5vw, 2.25rem);
+    color: #000000;
+}
+
+.container-filtros{
+    width: 21.81%;
+    height: 105.28vh;
+    margin-top: 36px;
+    margin-left: 27px;
+    background-color: red;
+}
+
+.pesquisa{
+    width: 90.13%;
+    height: 9.88%;
+    margin-left: 15px;
+    background-color: #110E0E;
+    border: none;
+    border-radius: 7px;
+}
+
+.filtros{
+    width: 90.13%;
+    height: 87.69%;
+    margin-top: 16px;
+    margin-left: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #1A1A1A;
+}
+
+.pFiltros{
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 23px;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(1.5rem, 5vw, 2.25rem);
+}
+
+.pPrecos{
+    color: #ffffff;
+    padding-top: 23px;
+    padding-left: 7px;
+    font-style: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(1rem, 5vw, 1.5rem);
+}
+
+.pGeneros{
+    color: #ffffff;
+    padding-top: 38px;
+    padding-left: 7px;
+    font-style: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(1rem, 5vw, 1.5rem);
+}
+
+.preco15, .preco30, .preco50{
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(0.5rem, 5vw, 1.125rem);
+}
+
+.pComedia, .pRomance, .pTerror, .pAjuda{
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(0.5rem, 5vw, 1.125rem);
+}
+

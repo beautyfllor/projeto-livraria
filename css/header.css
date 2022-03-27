@@ -31,7 +31,7 @@ header{
     margin-right: 25px;
 }
 
-.home, .link-produtos, .promocoes, .sobre, .destaques, .contatos{
+.home, .link-produtos, .link-promocoes, .link-sobre, .destaques, .link-contatos{
     color: #ffff;
     padding-left: 15px;
     text-decoration: none;

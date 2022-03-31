@@ -30,7 +30,7 @@
 .containerForm-login{
     width: 100%;
     height: 15.29%;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     padding-left: 40px;
     display: flex;
     /* background-color: blueviolet; */
@@ -75,7 +75,7 @@
 .containerForm-button{
     width: 20.92%;
     height: 15.29%;
-    margin-top: 20px;
+    margin-top: 15px;
     margin-left: 534px;
     /* background-color: red; */
 }

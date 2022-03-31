@@ -1,0 +1,97 @@
+.containerForm{
+    width: 51.46%;
+    height: 38.96%;
+    border: solid #000000;
+}
+
+.text{
+    width: 100%;
+    height: 25.31%;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #4C1A3F;
+}
+
+.cms{
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(1rem, 5vw, 2rem);
+}
+
+.livraria{
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(0.5rem, 5vw, 1rem);
+}
+
+.containerForm-login{
+    width: 100%;
+    height: 15.29%;
+    margin-bottom: 20px;
+    padding-left: 40px;
+    display: flex;
+    /* background-color: blueviolet; */
+}
+
+.labelLogin, .labelSenha{
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(0.5rem, 5vw, 1.3rem);
+}
+
+.login{
+    width: 64.37%;
+    height: 100%;
+    margin-left: 20px;
+    background-color: #1A1A1A;
+    border: none;
+    border-radius: 15px;
+    color: #ffffff;
+    padding-left: 10px;
+}
+
+.senha{
+    width: 64.37%;
+    height: 100%;
+    margin-left: 14px;
+    background-color: #1A1A1A;
+    border: none;
+    border-radius: 15px;
+    color: #ffffff;
+    padding-left: 10px;
+}
+
+.containerForm-senha{
+    width: 100%;
+    height: 15.29%;
+    padding-left: 40px;
+    display: flex;
+    /* background-color: blueviolet; */
+}
+
+.containerForm-button{
+    width: 20.92%;
+    height: 15.29%;
+    margin-top: 20px;
+    margin-left: 534px;
+    /* background-color: red; */
+}
+
+button{
+    width: 100%;
+    height: 100%;
+    background-color: #1A1A1A;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(0.5rem, 5vw, 1.3rem);
+    border: none;
+    border-radius: 15px;
+    transition: 1s;
+}
+
+button:hover{
+    background-color: #A02582;
+}

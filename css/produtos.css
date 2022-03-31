@@ -1,6 +1,7 @@
 .produtos{
     width: 100vw;
     height: auto;
+    margin-bottom: 25px;
     background-color: #ffffff;
 }
 
@@ -13,11 +14,18 @@
     color: #000000;
 }
 
+.filtros-cards{
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    display: flex;
+    background-color: chartreuse;
+}
+
 .container-filtros{
     width: 21.81%;
     height: 105.28vh;
-    margin-top: 36px;
-    margin-left: 27px;
+    margin-left: 20px;
     background-color: red;
 }
 
@@ -59,6 +67,24 @@
     font-size: clamp(1rem, 5vw, 1.5rem);
 }
 
+.radios{
+    margin-top: 20px;
+    /* background-color: turquoise; */
+}
+
+.radio15, .radio30, .radio50{
+    display: flex;
+    margin-top: 15px;
+    /* background-color: yellowgreen; */
+}
+
+.preco15, .preco30, .preco50{
+    color: #ffffff;
+    margin-left: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(0.5rem, 5vw, 1.125rem);
+}
+
 .pGeneros{
     color: #ffffff;
     padding-top: 38px;
@@ -68,18 +94,70 @@
     font-size: clamp(1rem, 5vw, 1.5rem);
 }
 
-.preco15, .preco30, .preco50{
-    color: #ffffff;
-    font-family: 'Roboto', sans-serif;
-    font-size: clamp(0.5rem, 5vw, 1.125rem);
+.checks{
+    margin-top: 20px;
+    /* background-color: tomato; */
+}
+
+.divComedia, .divRomance, .divTerror, .divAjuda{
+    display: flex;
+    margin-top: 15px;
+    /* background-color: yellowgreen; */
 }
 
 .pComedia, .pRomance, .pTerror, .pAjuda{
     color: #ffffff;
+    margin-left: 10px;
     font-family: 'Roboto', sans-serif;
     font-size: clamp(0.5rem, 5vw, 1.125rem);
 }
 
 .cards{
-    
+    width: 67.07%;
+    height: auto;
+    margin-left: 50px;
+    padding-left: 45px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: #3618e4;
+}
+
+.card-container-produto{
+    width: 29.72%;
+    height: 48.18%;
+    display: flex;
+    flex-direction: column;
+    background-color: #1A1A1A;
+}
+
+.cardProdutoImage{
+    width: 48.58%;
+    height: 53%;
+    margin-top: 20px;
+    margin-left: 62px;
+    background-color: #ffffff;
+}
+
+.cardProdutoImage > img{
+    width: 100%;
+    height: 100%;
+}
+
+.cardProdutoText{
+    display: flex;
+    flex-direction: column;
+    background-color: tomato;
+}
+
+.cardProdutoTitulo{
+    color: #ffffff;
+}
+
+.cardPreco{
+    color: #ffffff;
+}
+
+.detalhes-produto{
+    background-color: #A02582;
 }

@@ -27,7 +27,7 @@
         </div>
       </div>
       <div class="iconBook">
-        <img src="./img/book (1).png" alt="Livro" />
+        <img src="./img/book.png" alt="Livro" />
       </div>
     </header>
     <div class="nav">
@@ -58,15 +58,52 @@
       <div class="right">
         <p class="welcome">Bem-vindo, user</p>
         <div class="img">
-            <img src="./img/logout 1.png" alt="Logout" />
+            <img src="./img/logout.png" alt="Logout" />
         </div>
         <p class="logout">Logout</p>
       </div>
     </div>
     <div class="content">
-      <div class="titulo">
-        <p>Título da sessão</p>
-      </div>
+      <table id="tblContatos" class="tblContatos">
+        <tr>
+          <td id="tblTitulo" colspan="5">
+            <h1>Contatos</h1>
+          </td>
+        </tr>
+        <tr id="tblLinhas" class="tblLinhas">
+          <td class="tblColunas-destaque">Nome</td>
+          <td class="tblColunas-destaque">Email</td>
+          <td class="tblColunas-destaque">Mensagem</td>
+          <td class="tblColunas-destaque">Excluir</td>
+        </tr>
+
+        <?php
+          //Import do arquivo da controller para solicitar a listagem dos dados
+          require_once('controller/controllerContatos.php');
+
+          //Chama a função que vai retornar os dados de contatos
+          $listContato = listarContato();
+
+          //Estrutura de repetição para retornar os dados do array e printar na tela
+          foreach($listContato as $item) {
+        ?>
+
+        <tr id="tblLinhas">
+          <td class="tblColunas-registros"><?=$item['nome']?></td>
+          <td class="tblColunas-registros"><?=$item['email']?></td>
+          <td class="tblColunas-registros"><?=$item['mensagem']?></td>
+          <td class="tblColunas-registros">
+            <a onclick="return confirm('Deseja realmente excluir esse item?');" href="router.php?component=contatos&action=deletar&id=<?= $item['id'] ?>">
+              <img src="./img/excluir.png" alt="Excluir">
+            </a>
+          </td>
+        </tr>
+
+        <?php
+          }
+        ?>
+
+      </table>
     </div>
     <footer>
       <div class="copyright">

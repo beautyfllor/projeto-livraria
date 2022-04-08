@@ -31,6 +31,10 @@ header{
     font-size: clamp(1rem, 5vw, 2rem);
 }
 
+.aCms{
+    text-decoration: none;
+}
+
 .pCms{
     color: #ffffff;
     font-family: 'Roboto', sans-serif;
@@ -175,6 +179,38 @@ header{
     width: 100%;
     height: auto;
     min-height: 60%;
+}
+
+#ConsultaDeDados{
+    width: 1000px;
+    min-height: 300px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 1px black;
+}
+
+#tblContatos{
+    width: 100%;
+    min-height: 30px;
+    height: auto;
+}
+
+#tblTitulo{
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(0.5rem, 5vw, 1rem);
+    background-color: #4C1A3F;
+}
+
+#tblLinhas{
+    width: 100%;
+    height: 50px;
+    border: solid 1px black;
+    /* background-color: #A02582; */
 }
 
 footer{

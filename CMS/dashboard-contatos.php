@@ -12,14 +12,16 @@
     />
     <link rel="stylesheet" type="text/css" href="../css/reset.css" />
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
-    <link rel="stylesheet" type="text/css" href="./css/dashboard.css" />
+    <link rel="stylesheet" type="text/css" href="./css/dashboard-contatos.css" />
     <title>CMS</title>
   </head>
   <body>
     <header>
       <div class="text">
         <div class="cms-livraria">
-          <p class="pCms">CMS</p>
+          <a href="dashboard.php" class="aCms">
+            <p class="pCms">CMS</p>
+          </a>
           <p class="pLivraria">Livraria da Flor</p>
         </div>
         <div class="gerenciamento">
@@ -64,46 +66,48 @@
       </div>
     </div>
     <div class="content">
-      <table id="tblContatos" class="tblContatos">
-        <tr>
-          <td id="tblTitulo" colspan="5">
-            <h1>Contatos</h1>
-          </td>
-        </tr>
-        <tr id="tblLinhas" class="tblLinhas">
-          <td class="tblColunas-destaque">Nome</td>
-          <td class="tblColunas-destaque">Email</td>
-          <td class="tblColunas-destaque">Mensagem</td>
-          <td class="tblColunas-destaque">Excluir</td>
-        </tr>
+      <div id="ConsultaDeDados">
+        <table id="tblContatos">
+          <tr>
+            <td id="tblTitulo" colspan="5">
+              <h1>Contatos</h1>
+            </td>
+          </tr>
+          <tr id="tblLinhas">
+            <td class="tblColunas-destaque">Nome</td>
+            <td class="tblColunas-destaque">Email</td>
+            <td class="tblColunas-destaque">Mensagem</td>
+            <td class="tblColunas-destaque">Excluir</td>
+          </tr>
 
-        <?php
-          //Import do arquivo da controller para solicitar a listagem dos dados
-          require_once('controller/controllerContatos.php');
+          <?php
+            //Import do arquivo da controller para solicitar a listagem dos dados
+            require_once('controller/controllerContatos.php');
 
-          //Chama a função que vai retornar os dados de contatos
-          $listContato = listarContato();
+            //Chama a função que vai retornar os dados de contatos
+            $listContato = listarContato();
 
-          //Estrutura de repetição para retornar os dados do array e printar na tela
-          foreach($listContato as $item) {
-        ?>
+            //Estrutura de repetição para retornar os dados do array e printar na tela
+            foreach($listContato as $item) {
+          ?>
 
-        <tr id="tblLinhas">
-          <td class="tblColunas-registros"><?=$item['nome']?></td>
-          <td class="tblColunas-registros"><?=$item['email']?></td>
-          <td class="tblColunas-registros"><?=$item['mensagem']?></td>
-          <td class="tblColunas-registros">
-            <a onclick="return confirm('Deseja realmente excluir esse item?');" href="router.php?component=contatos&action=deletar&id=<?= $item['id'] ?>">
-              <img src="./img/excluir.png" alt="Excluir">
-            </a>
-          </td>
-        </tr>
+          <tr id="tblLinhas">
+            <td class="tblColunas-registros"><?=$item['nome']?></td>
+            <td class="tblColunas-registros"><?=$item['email']?></td>
+            <td class="tblColunas-registros"><?=$item['mensagem']?></td>
+            <td class="tblColunas-registros">
+              <a onclick="return confirm('Deseja realmente excluir esse item?');" href="router.php?component=contatos&action=deletar&id=<?= $item['id'] ?>">
+                <img src="./img/excluir.png" alt="Excluir">
+              </a>
+            </td>
+          </tr>
 
-        <?php
-          }
-        ?>
+          <?php
+            }
+          ?>
 
-      </table>
+        </table>
+      </div>
     </div>
     <footer>
       <div class="copyright">

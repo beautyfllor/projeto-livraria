@@ -42,7 +42,9 @@
           <p>Adm. de produtos</p>
         </div>
         <div class="categorias">
+          <a href="dashboard-categorias.php">
           <img src="./img/categoria 1.png" alt="Categoria" />
+          </a>
           <p>Adm. de categorias</p>
         </div>
         <div class="contatos">

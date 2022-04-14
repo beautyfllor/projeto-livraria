@@ -49,7 +49,7 @@
             <a href="dashboard-contatos.php">
                 <img src="./img/caderno-de-contatos 1.png" alt="Caderno de contatos"/>
             </a>
-          <p>Contatos</p>
+            <p>Contatos</p>
         </div>
         <div class="usuarios">
           <img src="./img/usuario-de-perfil 1.png" alt="Usuário" />

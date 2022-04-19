@@ -5,13 +5,14 @@
     if(session_status()) {
         //Valida se a variável de sessão dadosCategoria não está vazia
         if(!empty($_SESSION['dadosCategoria'])) {
-            $nome = $_SESSION['dadosCategoria']['nome'];
+          $id = $_SESSION['dadosCategoria']['id'];
+          $nome = $_SESSION['dadosCategoria']['nome'];
 
-            //Mudamos a ação do form para editar o registro no click do botão salvar
-            $form = (string) "router.php?component=categorias&action=editar&id=".$id;
+          //Mudamos a ação do form para editar o registro no click do botão salvar
+          $form = (string) "router.php?component=categorias&action=editar&id=".$id;
 
-            //Destrói uma variável da memória do servidor
-            unset($_SESSION['dadosCategoria']);
+          //Destrói uma variável da memória do servidor
+          unset($_SESSION['dadosCategoria']);
         }
     }
 ?>
@@ -85,7 +86,7 @@
     <div class="content">
         <div class="containerInserirCategoria">
             <form action="<?=$form?>" name="frmInserirCategoria" method="POST">
-                <input type="text" name="txtNome" placeholder="Digite o nome da categoria">
+                <input type="text" name="txtNome" value="<?= isset($nome)?$nome:null ?>" placeholder="Digite o nome da categoria">
                 <div class="button">
                     <input type="submit" name="btnCadastrar" value="Cadastrar">
                 </div>
@@ -117,7 +118,7 @@
                 <tr id="tblLinhas">
                     <td class="tblColunas-registros"><?=$item['nome']?></td>
                     <td class="tblColunas-registros">
-                        <a href="">
+                        <a href="router.php?component=categorias&action=buscar&id=<?=$item['id']?>">
                             <img src="./img/editar.png" alt="Editar">
                         </a>
                         <a onclick="return confirm('Deseja realmente excluir esse item?');" href="router.php?component=categorias&action=deletar&id=<?= $item['id'] ?>">

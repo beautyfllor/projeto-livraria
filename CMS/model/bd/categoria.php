@@ -89,15 +89,15 @@
         return $statusResposta;
     }
 
-    //Função para buscar um contato no BD, através do id do registro
-    function selectByIdContato($id) {
-
+    //Função para buscar uma categoria no BD, através do id do registro
+    function selectByIdCategoria($id) {
+      
         //Abre a conexao com o BD
         $conexao = conexaoMysql();
 
         //Script para listar todos os dados do BD
-        $sql = "select * from tblcontatos where idcontato = ".$id;
-
+        $sql = "select * from tblcategorias where idcategoria = ".$id;
+        
         //Executa o script sql no BD e guarda o retorno dos dados, se houver
         $result = mysqli_query($conexao, $sql);
 
@@ -105,6 +105,7 @@
         if($result) {
             //Se houver dados... gera o array
             if($rsDados = mysqli_fetch_assoc($result)) {
+
                 //Cria um array com os dados do BD
                 $arrayDados = array(
                     "id"   => $rsDados['idcategoria'],
@@ -117,5 +118,31 @@
 
             return $arrayDados;
         }
+    }
+
+    //Função para realizar o update no BD
+    function updateCategoria($dadosCategoria) {
+        //Declaração de variável para utilizar no return desta função
+        $statusResposta = (boolean) false;
+
+        //Abre a conexão com o banco de dados
+        $conexao = conexaoMysql();
+
+        //Monta o script para atualizar no BD
+        $sql = "update tblcategorias set
+                    nome = '".$dadosCategoria['nome']."'
+                where idcategoria =".$dadosCategoria['id'];
+
+        //Validação para verificar se o script 'sql' está certo
+        if(mysqli_query($conexao, $sql)) {
+            //Validação para verificar se uma linha foi acrescentada no BD
+            if(mysqli_affected_rows($conexao))
+                $statusResposta = true;
+        }
+
+        //Solicita o fechamento da conexão com o BD
+        fecharConexaoMysql($conexao);
+
+        return $statusResposta;
     }
 ?>

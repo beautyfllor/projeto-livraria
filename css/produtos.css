@@ -1,5 +1,6 @@
 .produtos{
     width: 100vw;
+    min-height: 110vh;
     height: auto;
     margin-bottom: 25px;
     background-color: #ffffff;
@@ -16,6 +17,7 @@
 
 .filtros-cards{
     width: 100%;
+    min-height: 105.28vh;
     height: auto;
     margin-top: 10px;
     display: flex;
@@ -30,8 +32,8 @@
 }
 
 .pesquisa{
-    width: 90.13%;
-    height: 9.88%;
+    width: 283px;
+    height: 65px;
     margin-left: 15px;
     background-color: #110E0E;
     border: none;
@@ -39,8 +41,8 @@
 }
 
 .filtros{
-    width: 90.13%;
-    height: 87.69%;
+    width: 283px;
+    height: 577px;
     margin-top: 16px;
     margin-left: 15px;
     border: none;
@@ -114,6 +116,7 @@
 
 .cards{
     width: 67.07%;
+    min-height: 105.28vh;
     height: auto;
     margin-left: 50px;
     padding-left: 45px;
@@ -124,8 +127,8 @@
 }
 
 .card-container-produto{
-    width: 29.72%;
-    height: 48.18%;
+    width: 247px;
+    height: 317px;
     display: flex;
     flex-direction: column;
     background-color: #1A1A1A;

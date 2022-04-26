@@ -15,7 +15,7 @@
         //Chama a função que vai listar os dados no BD
         $dados = selectAllCategorias();
 
-        //Verifica se os contatos retornados pela função 'selectAllCategorias' estão vazios
+        //Verifica se as categorias retornadas pela função 'selectAllCategorias' estão vazios
         if(!empty($dados))
             return $dados;
         else 

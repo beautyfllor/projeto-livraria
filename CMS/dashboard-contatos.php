@@ -55,7 +55,9 @@
           <p>Contatos</p>
         </div>
         <div class="usuarios">
-          <img src="./img/usuario-de-perfil 1.png" alt="Usuário" />
+          <a href="dashboard-usuarios.php">
+            <img src="./img/usuario-de-perfil 1.png" alt="Usuário" />
+          </a>
           <p>Adm. de usuários</p>
         </div>
       </div>

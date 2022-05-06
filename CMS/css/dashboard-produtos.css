@@ -1,0 +1,215 @@
+header{
+    width: 100%;
+    height: 16%;
+    display: flex;
+    padding-top: 36px;
+    padding-left: 18px;
+    background-color: #4C1A3F;
+}
+
+.text{
+    width: 25%;
+    height: 67.12%;
+    margin-top: 15px;
+    flex-direction: column;
+    /* background-color: red; */
+}
+
+.cms-livraria{
+    width: 100%;
+    height: 44.90%;
+    margin-bottom: 10px;
+    padding-left: 16px;
+    display: flex;
+    /* background-color: blue; */
+}
+
+.pLivraria{
+    margin-left: 15%;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(1rem, 5vw, 2rem);
+}
+
+.pCms{
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: clamp(1rem, 5vw, 2rem);
+}
+
+.gerenciamento{
+    width: 100%;
+    height: 44.90%;
+    padding-left: 16px;
+    /* background-color: black; */
+}
+
+.gerenciamento > p{
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(0.5rem, 5vw, 1.5rem);
+}
+
+.iconBook{
+    width: 5%;
+    height: 90%;
+    margin-left: 60%;
+    /* background-color: tomato; */
+}
+
+.iconBook > img{
+    width: 100%;
+    height: 100%;
+}
+
+.nav{
+    width: 100%;
+    height: 16%;
+    margin-bottom: 30px;
+    /* padding-top: 38px; */
+    display: flex;
+    background-color: #1a1a1a;
+}
+
+.sub-nav{
+    width: 64.62%;
+    height: 100%;
+    display: flex;
+    gap: 10px;
+    /* background-color: #34C5C5; */
+}
+
+.produtos{
+    width: 20%;
+    height: 100%;
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(0.5rem, 5vw, 1.5rem);
+    /* background-color: blueviolet; */
+}
+
+.categorias{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(0.5rem, 5vw, 1.5rem);
+    /* background-color: blueviolet; */
+}
+
+.contatos{
+    width: 15%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(0.5rem, 5vw, 1.5rem);
+    /* background-color: blueviolet; */
+}
+
+.usuarios{
+    width: 18%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(0.5rem, 5vw, 1.5rem);
+    /* background-color: blueviolet; */
+}
+
+.right{
+    width: 21.84%;
+    height: 100%;
+    margin-left: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* background-color: cyan; */
+}
+
+.welcome{
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(0.5rem, 5vw, 1.5rem);
+}
+
+.logout{
+    margin-top: 10px;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(0.5rem, 5vw, 1.5rem);
+}
+
+.img{
+    width: 12.93%;
+    height: 28.33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: crimson; */
+}
+
+.produtos, .categorias, .contatos, .usuarios, .img:hover{
+    cursor: pointer;
+}
+
+.content{
+    width: 100%;
+    height: auto;
+    min-height: 60%;
+}
+
+footer{
+    width: 100%;
+    height: 8%;
+    display: flex;
+    color: #ffffff;
+    background-color: #1a1a1a;
+}
+
+.copyright{
+    width: 40.70%;
+    height: 83.78%;
+    margin-left: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(0.5rem, 5vw, 1rem);
+    /* background-color: tomato; */
+}
+
+.versao{
+    width: 18.44%;
+    height: 72.97%;
+    margin-top: 15px;
+    margin-left: 10.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(0.3rem, 5vw, 0.75rem);
+    /* background-color: blue; */
+}

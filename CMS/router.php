@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' || $_SERVER['REQUEST_METHOD'] == 'GET')
             //Verificando o tipo de ação
             if ($action == 'DELETAR') {
                 /*Recebe o id do registro que deverá ser excluído, que foi enviado 
-                    pela url no link da imagem do excluir que foi acionado na index*/
+                pela url no link da imagem do excluir que foi acionado na index*/
                 $idcategoria = $_GET['id'];
 
                 //Chama a função de excluir na controller
@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' || $_SERVER['REQUEST_METHOD'] == 'GET')
                 }
             } else if ($action == 'BUSCAR') {
                 /*Recebe o id do registro que deverá ser editado, que foi enviado 
-                    pela url no link da imagem do editar que foi acionado na index*/
+                pela url no link da imagem do editar que foi acionado na index*/
                 $idCategoria = $_GET['id'];
 
                 //Chama a função de buscar na controller
@@ -112,6 +112,73 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' || $_SERVER['REQUEST_METHOD'] == 'GET')
                 } else if (is_array($resposta))
                     echo ("<script>alert('" . $resposta["message"] . "'); window.history.back(); </script>");
             }
+        case 'USUARIOS';
+        //Import da controller de Usuários
+        require_once('controller/controllerUsuarios.php');
+        
+        //verificando o tipo de ação
+        if ($action == 'DELETAR') {
+            /*Recebe o id do registro que deverá ser excluído, que foi enviado 
+            pela url no link da imagem do excluir que foi acionado na index*/
+            $idusuario = $_GET['id'];
+
+            //Chama a função de excluir na controller
+            $resposta = excluirUsuario($idusuario);
+
+            //Retorna se a exclusão deu certo ou não
+            if(is_bool($resposta)) {
+                if($resposta) {
+                    echo ("<script>alert('Registro excluído com sucesso!'); window.location.href = 'dashboard-usuarios.php' </script>");
+                }
+            } elseif(is_array($resposta)) {
+                echo ("<script>alert('" . $resposta["message"] . "'); window.location.href = 'dashboard-usuarios.php' </script>");
+            }
+        } else if ($action == 'INSERIR') {
+            //Chama a função de inserir na controller e envia o objeto POST para a função inserirUsuario
+            $resposta = inserirUsuario($_POST);
+
+            //Valida o tipo de dados que a controller retornou 
+            if(is_bool($resposta)) {
+                //Verificar se o retorno foi verdadeiro ou se deu erro
+                if($resposta)
+                    echo ("<script>alert('Registro inserido com sucesso!'); window.location.href = 'dashboard-usuarios.php' </script>");
+            } else if(is_array($resposta)) {
+                echo("<script>alert('" . $resposta["message"] . "'); window.location.href = 'dashboard-usuarios.php' </script>");
+            }
+        } else if ($action == 'BUSCAR') {
+            /*Recebe o id do registro que deverá ser editado, que foi enviado 
+            pela url no link da imagem do editar que foi acionado na index*/
+            $idUsuario = $_GET['id'];
+
+            //Chama a função de buscar na controller
+            $dados = buscarUsuario($idUsuario);
+
+            //Ativa a utilização de variáveis de sessão no servidor
+            session_start();
+
+            //Guarda em uma  variável de sessão os dados que o BD retornou para a busca do id
+            $_SESSION['dadosUsuario'] = $dados;
+
+            //Voltando para a tela desejada
+            require_once('dashboard-usuarios.php');
+        } else if ($action == 'EDITAR') {
+
+            //Recebe o id que foi encaminhado no action do form pela URL
+            $idUsuario = $_GET['id'];
+
+            //Chama a função de editar na controller e envia o objeto POST para a função atualizarUsuario
+            $resposta = atualizarUsuario($_POST, $idUsuario);
+            
+            //Valida o tipo de dados que a controller retornou 
+            if (is_bool($resposta)) {
+                //Verificar se o retorno foi verdadeiro
+                if ($resposta) {
+                    echo ("<script>alert('Registro atualizado com sucesso!'); window.location.href = 'dashboard-usuarios.php' </script>");
+                }
+                //Se um retorno for um array significa que houve erro no processo de inserção 
+            } else if (is_array($resposta))
+            echo ("<script>alert('" . $resposta["message"] . "'); window.history.back(); </script>");
+        }
             break;
     }
 }

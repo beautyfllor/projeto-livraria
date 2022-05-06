@@ -122,6 +122,7 @@
 
     //Função para realizar o update no BD
     function updateCategoria($dadosCategoria) {
+
         //Declaração de variável para utilizar no return desta função
         $statusResposta = (boolean) false;
 
@@ -135,6 +136,7 @@
 
         //Validação para verificar se o script 'sql' está certo
         if(mysqli_query($conexao, $sql)) {
+            
             //Validação para verificar se uma linha foi acrescentada no BD
             if(mysqli_affected_rows($conexao))
                 $statusResposta = true;

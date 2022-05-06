@@ -54,10 +54,9 @@
     <div class="nav">
       <div class="sub-nav">
         <div class="produtos">
-          <img
-            src="./img/carrinho-de-compras 1.png"
-            alt="Carrinho de compras"
-          />
+          <a href="dashboard-produtos.php">
+            <img src="./img/carrinho-de-compras 1.png" alt="Carrinho de compras"/>
+          </a>
           <p>Adm. de produtos</p>
         </div>
         <div class="categorias">
@@ -90,7 +89,7 @@
     <div class="content">
         <div class="containerInserirCategoria">
             <form action="<?=$form?>" name="frmInserirCategoria" method="POST">
-                <input type="text" name="txtNome" value="<?= isset($nome)?$nome:null ?>" placeholder="Digite o nome da categoria">
+                <input type="text" name="txtNome" value="<?= isset($nome)?$nome:null?>" placeholder="Digite o nome da categoria">
                 <div class="button">
                     <input type="submit" name="btnCadastrar" value="Cadastrar">
                 </div>

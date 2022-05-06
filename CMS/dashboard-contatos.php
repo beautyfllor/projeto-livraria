@@ -35,10 +35,9 @@
     <div class="nav">
       <div class="sub-nav">
         <div class="produtos">
-          <img
-            src="./img/carrinho-de-compras 1.png"
-            alt="Carrinho de compras"
-          />
+          <a href="dashboard-produtos.php">
+            <img src="./img/carrinho-de-compras 1.png" alt="Carrinho de compras"/>
+          </a>
           <p>Adm. de produtos</p>
         </div>
         <div class="categorias">

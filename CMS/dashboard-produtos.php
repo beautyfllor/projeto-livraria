@@ -1,3 +1,16 @@
+<?php
+  $form = (string) "router.php?component=produtos&action=inserir";
+
+
+//        //Mudamos a ação do form para editar o registro no click do botão salvar
+//        $form = (string) "router.php?component=usuarios&action=editar&id=".$id;
+
+//        //Destrói uma variável da memória do servidor
+//        unset($_SESSION['dadosUsuario']);
+//      }
+//   }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -12,7 +25,7 @@
     />
     <link rel="stylesheet" type="text/css" href="../css/reset.css" />
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
-    <link rel="stylesheet" type="text/css" href="./css/dashboard.css" />
+    <link rel="stylesheet" type="text/css" href="./css/dashboard-produtos.css" />
     <title>CMS</title>
   </head>
   <body>
@@ -66,7 +79,23 @@
       </div>
     </div>
     <div class="content">
-      
+        <div class="containerForm">
+            <form action="<?=$form?>" name="frmProdutos" method="POST">
+                <div class="container-produtos">
+                    <label class="labelNome">Nome:</label>
+                    <input type="text" name="txtNome">
+                    <label class="labelDescricao">Descrição:</label>
+                    <textarea name="txtDescricao" cols="30" rows="10"></textarea>
+                    <label class="labelPreco">Preço:</label>
+                    <input type="number" name="txtPreco">
+                    <label class="labelDesconto">Desconto:</label>
+                    <input type="number" name="txtDesconto">
+                    <label class="labelDestaque">Destaque:</label>
+                    <input type="checkbox" name="txtDestaque">
+                    <input type="file" name="fleFoto" accept=".jpg, .png, .jpeg, .gif">
+                </div>
+            </form>
+        </div>
     </div>
     <footer>
       <div class="copyright">

@@ -45,6 +45,7 @@
 
      //Função para receber dados da Wiew e encaminhar para a Model (inserir)
      function inserirCategoria($dadosCategoria) {
+
          //Validação para verificar se o objeto está vazio
          if(!empty($dadosCategoria)) {
              //Validação de caixa vazia do elemento nome pois é obrigatório no BD
@@ -57,13 +58,13 @@
                 //Import do arquivo de modelagem para manipular o BD
                 require_once('model/bd/categoria.php');
 
-                    //Chamando a função que fará o insert no BD (esta função está na model)
-                    if(insertCategoria($arrayDados))
-                        return true;
-                    else
-                        return array('idErro' => 1, 
-                                    'message' => 'Não foi possível inserir os dados no Banco de Dados.'
-                        );
+                //Chamando a função que fará o insert no BD (esta função está na model)
+                if(insertCategoria($arrayDados))
+                    return true;
+                else
+                    return array('idErro' => 1, 
+                                'message' => 'Não foi possível inserir os dados no Banco de Dados.'
+                    );
              } else
                 return array('idErro' => 2, 
                             'message' => 'Existem campos obrigatórios que não foram preenchidos.'
@@ -74,7 +75,7 @@
      //Função para buscar uma categoria através do id do registro
      function buscarCategoria($id) {
 
-        //Validação para verificar se o id é um núemro válido
+        //Validação para verificar se o id é um número válido
         if($id != 0 && !empty($id) && is_numeric($id)) {
 
             //Import do arquivo de categoria - model
@@ -103,6 +104,7 @@
 
                 //Validação para garantir que o id seja válido
                 if(!empty($id) && $id != 0 && is_numeric($id)) {
+                    
                     //Criação de um array de dados que será encaminhado a model para inserir no BD
                     $arrayDados = array(
                         "id"   => $id,

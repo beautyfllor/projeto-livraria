@@ -56,10 +56,9 @@
     <div class="nav">
       <div class="sub-nav">
         <div class="produtos">
-          <img
-            src="./img/carrinho-de-compras 1.png"
-            alt="Carrinho de compras"
-          />
+          <a href="dashboard-produtos.php">
+            <img src="./img/carrinho-de-compras 1.png" alt="Carrinho de compras"/>
+          </a>
           <p>Adm. de produtos</p>
         </div>
         <div class="categorias">
@@ -91,12 +90,12 @@
       <div class="containerForm">
         <form action="<?=$form?>" name="frmUsuario" method="POST">
           <div class="container-login-senha">
-          <label class="labelNome">Nome:</label>
-            <input type="text" class="nome" placeholder="Digite o nome">
+            <label class="labelNome">Nome:</label>
+            <input type="text" class="nome" name="txtNome" value="<?= isset($nome)?$nome:null?>" placeholder="Digite o nome">
             <label class="labelLogin">Login:</label>
-            <input type="text" class="login" placeholder="Digite o login">
+            <input type="text" class="login" name="txtLogin" value="<?= isset($login)?$login:null?>" placeholder="Digite o login">
             <label class="labelSenha">Senha:</label>
-            <input type="password" class="senha" placeholder="Digite a senha">
+            <input type="password" class="senha" name="txtSenha" placeholder="Digite a senha">
             <div class="button">
               <input type="submit" name="Salvar" value="Salvar">
             </div>
@@ -131,10 +130,10 @@
               <td class="tblColunas-registros"><?=$item['nome']?></td>
               <td class="tblColunas-registros"><?=$item['login']?></td>
               <td class="tblColunas-registros">
-                <a href="#">
+                <a href="router.php?component=usuarios&action=buscar&id=<?= $item['id'] ?>">
                   <img src="./img/editar.png" alt="Editar">
                 </a>
-                <a href="#">
+                <a onclick="return confirm('Deseja realmente excluir esse item?');" href="router.php?component=usuarios&action=deletar&id=<?= $item['id'] ?>">
                   <img src="./img/excluir.png" alt="Excluir">
                 </a>
               </td>

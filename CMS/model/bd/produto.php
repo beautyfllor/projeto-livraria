@@ -3,20 +3,21 @@
      * Objetivo: Arquivo responsável por manipular os dados dentro do BD
      *      (insert, update, select e delete). - "A model"
      * Autora: Florbela
-     * Data: 26/04/2022
+     * Data: 13/05/2022
      * Versão: 1.0
      ***********************************************************************/
 
-    //Import do arquivo que estabelece conexão com o BD
-    require_once('conexaoMysql.php');
+     //Import do arquivo que estabelece conexão com o BD
+     require_once('conexaoMysql.php');
 
-    //Função para listar todas as categorias do BD
-    function selectAllUsuarios() {
+     //Função para listar todos os produtos do BD
+     function selectAllProdutos() {
+
         //Abre a conexao com o BD
         $conexao = conexaoMysql();
 
         //Script para listar todos os dados do BD
-        $sql = 'select * from tblusuarios order by idusuario desc';
+        $sql = 'select * from tblprodutos order by idproduto desc';
 
         //Executa o script sql no BD e guarda o retorno dos dados, se houver
         $result = mysqli_query($conexao, $sql);
@@ -25,12 +26,16 @@
         if($result) {
             $cont = 0;
             while($rsDados = mysqli_fetch_assoc($result)) {
+
                 //Cria um array com os dados do BD
                 $arrayDados[$cont] = array(
-                    "id"    => $rsDados['idusuario'],
+                    "id"    => $rsDados['idproduto'],
                     "nome"  => $rsDados['nome'],
-                    "login" => $rsDados['login'],
-                    "senha" => $rsDados['senha']
+                    "descricao" => $rsDados['descricao'],
+                    "preco" => $rsDados['preco'],
+                    "desconto" => $rsDados['desconto'],
+                    "destaque" => $rsDados['destaque'],
+                    "foto" => $rsDados['foto']
                 );
                 $cont++;
             }
@@ -42,7 +47,8 @@
     }
 
     //Função para excluir no BD
-    function deleteUsuario($id) {
+    function deleteProduto($id) {
+
         //Declaração de variável para utilizar no return desta função
         $statusResposta = (boolean) false;
 
@@ -50,7 +56,7 @@
         $conexao = conexaoMysql();
 
         //Script para deletar um registro do BD
-        $sql = "delete from tblusuarios where idusuario = ".$id;
+        $sql = "delete from tblprodutos where idproduto = ".$id;
 
         //Valida se o script está correto, sem erro de sintaxe e executa o BD
         if(mysqli_query($conexao, $sql)) {
@@ -64,7 +70,7 @@
     }
 
     //Função para realizar o insert no BD
-    function insertUsuario($dadosUsuario) {
+    function insertProduto($dadosProduto) {
 
         //Declaração de variável para utilizar no return desta função
         $statusResposta = (boolean) false;
@@ -73,14 +79,19 @@
         $conexao = conexaoMysql();
 
         //Monta o script para enviar para o BD
-        $sql = "insert into tblusuarios
+        $sql = "insert into tblprodutos
                     (nome,
-                    login,
-                    senha)
+                    preco,
+                    desconto,
+                    destaque,
+                    descricao)
                 values
-                    ('".$dadosUsuario['nome']."',
-                    '".$dadosUsuario['login']."',
-                    '".$dadosUsuario['senha']."');";
+                    ('".$dadosProduto['nome']."',
+                    '".$dadosProduto['preco']."',
+                    '".$dadosProduto['desconto']."',
+                    ".$dadosProduto['destaque'].",
+                    '".$dadosProduto['descricao']."'
+                );";
 
         //Validação para verificar se o script 'sql' está certo
         if(mysqli_query($conexao, $sql)) {
@@ -95,14 +106,14 @@
         return $statusResposta;
     }
 
-    //Função para buscar um usuário no BD, através do id do registro
-    function selectByIdUsuario($id) {
+    //Função para buscar um produto no BD, através do id do registro
+    function selectByIdProduto($id) {
 
         //Abre a conexao com o BD
         $conexao = conexaoMysql();
 
         //Script para listar todos os dados do BD
-        $sql = "select * from tblusuarios where idusuario = ".$id;
+        $sql = "select * from tblprodutos where idproduto = ".$id;
 
         //Executa o script sql no BD e guarda o retorno dos dados, se houver
         $result = mysqli_query($conexao, $sql);
@@ -114,10 +125,12 @@
 
                 //Cria um array com os dados do BD
                 $arrayDados = array(
-                    "id" => $rsDados['idusuario'],
+                    "id" => $rsDados['idproduto'],
                     "nome" => $rsDados['nome'],
-                    "login" => $rsDados['login'],
-                    "senha" => $rsDados['senha']
+                    "preco" => $rsDados['preco'],
+                    "desconto" => $rsDados['desconto'],
+                    "destaque" => $rsDados['destaque'],
+                    "descricao" => $rsDados['descricao']
                 );
             }
 
@@ -129,7 +142,7 @@
     }
 
     //Função para realizar o update no BD
-    function updateUsuario($dadosUsuario) {
+    function updateProduto($dadosProduto) {
 
         //Declaração de variável para utilizar no return desta função
         $statusResposta = (boolean) false;
@@ -138,11 +151,13 @@
         $conexao = conexaoMysql();
         
         //Monta o script para atualizar no BD
-        $sql = "update tblusuarios set
-                    nome = '".$dadosUsuario['nome']."',
-                    login = '".$dadosUsuario['login']."',
-                    senha = '".md5($dadosUsuario['senha'])."'
-                where idusuario =".$dadosUsuario['id'];
+        $sql = "update tblprodutos set
+                    nome = '".$dadosProduto['nome']."',
+                    preco = '".$dadosProduto['preco']."',
+                    desconto = '".$dadosProduto['desconto']."',
+                    destaque = ".$dadosProduto['destaque'].",
+                    descricao = '".$dadosProduto['descricao']."'
+                where idproduto =".$dadosProduto['id'];
 
         //Validação para verificar se o script 'sql' está certo
         if(mysqli_query($conexao, $sql)) {

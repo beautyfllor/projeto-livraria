@@ -22,7 +22,7 @@
             return false;
     }
 
-    //Função para realizar a exclusão de uma categoria
+    //Função para realizar a exclusão de um usuário
     function excluirUsuario($id) {
         //Validação para verificar se o id é um número válido
         if($id != 0 && !empty($id) && is_numeric($id)) {
@@ -74,7 +74,7 @@
         }
     }
 
-    //Função para buscar uma categoria através do id do registro
+    //Função para buscar um usuário através do id do registro
     function buscarUsuario($id) {
 
         //Validação para verificar se o id é um número válido

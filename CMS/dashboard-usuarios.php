@@ -146,15 +146,15 @@
         </table>
       </div>
     </div>
-    <footer>
-      <div class="copyright">
-        <p>© Copyright 2022</p>
-        <p>Todos os direitos reservados - Política de Privacidade</p>
-      </div>
-      <div class="versao">
-        <p>Desenvolvido por Florbela</p>
-        <p>Versão 1.0.0</p>
-      </div>
-    </footer>
   </body>
+  <footer>
+    <div class="copyright">
+      <p>© Copyright 2022</p>
+      <p>Todos os direitos reservados - Política de Privacidade</p>
+    </div>
+    <div class="versao">
+      <p>Desenvolvido por Florbela</p>
+      <p>Versão 1.0.0</p>
+    </div>
+  </footer>
 </html>

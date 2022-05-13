@@ -1,14 +1,28 @@
 <?php
   $form = (string) "router.php?component=produtos&action=inserir";
 
+  //Variável para carregar o nome da foto do BD
+  $foto = (string) null;
 
-//        //Mudamos a ação do form para editar o registro no click do botão salvar
-//        $form = (string) "router.php?component=usuarios&action=editar&id=".$id;
+  //Valida se a utilização de variáveis de sessão está ativa no servidor
+  if(session_status()) {
+    //Valida se a variável de sessão dadosProduto não está vazia
+    if(!empty($_SESSION['dadosProduto'])) {
+      $id = $_SESSION['dadosProduto']['id'];
+      $nome = $_SESSION['dadosProduto']['nome'];
+      $preco = $_SESSION['dadosProduto']['preco'];
+      $desconto = $_SESSION['dadosProduto']['desconto'];
+      $destaque = $_SESSION['dadosProduto']['destaque'];
+      $descricao = $_SESSION['dadosProduto']['descricao'];
+      $foto = $_SESSION['dadosProduto']['foto'];
 
-//        //Destrói uma variável da memória do servidor
-//        unset($_SESSION['dadosUsuario']);
-//      }
-//   }
+      //Mudamos a ação do form para editar o registro no click do botão salvar
+      $form = (string) "router.php?component=produtos&action=editar&id=".$id."&foto=".$foto;
+
+      //Destrói uma variável da memória do servidor
+      unset($_SESSION['dadosProduto']);
+    }
+ }
 ?>
 
 <!DOCTYPE html>
@@ -82,30 +96,89 @@
         <div class="containerForm">
             <form action="<?=$form?>" name="frmProdutos" method="POST">
                 <div class="container-produtos">
-                    <label class="labelNome">Nome:</label>
-                    <input type="text" name="txtNome">
-                    <label class="labelDescricao">Descrição:</label>
-                    <textarea name="txtDescricao" cols="30" rows="10"></textarea>
-                    <label class="labelPreco">Preço:</label>
-                    <input type="number" name="txtPreco">
-                    <label class="labelDesconto">Desconto:</label>
-                    <input type="number" name="txtDesconto">
-                    <label class="labelDestaque">Destaque:</label>
-                    <input type="checkbox" name="txtDestaque">
-                    <input type="file" name="fleFoto" accept=".jpg, .png, .jpeg, .gif">
+                  <label class="labelNome">Nome:</label>
+                  <input type="text" value="<?= isset($nome)?$nome:null?>" name="txtNome">
+                  <label class="labelPreco">Preço:</label>
+                  <input type="number" value="<?= isset($preco)?$preco:null?>" name="txtPreco">
+                  <label class="labelDesconto">Desconto:</label>
+                  <input type="number" value="<?= isset($desconto)?$desconto:null?>" name="txtDesconto">
+                  <label class="labelDestaque">Destaque:</label>
+                  <div class="radios">
+                    <input type="radio" name="rdoDestaque" value="true">
+                    <p class="pSim">Sim</p>
+                    <input type="radio" name="rdoDestaque" value="false">
+                    <p class="pNão">Não</p>
+                  </div>
+                  <label class="labelDescricao">Descrição:</label>
+                  <textarea name="txtDescricao" cols="30" rows="10"><?= isset($descricao)?$descricao:null?></textarea>
+                  <input type="file" name="fleFoto" accept=".jpg, .png, .jpeg, .gif">
+                  <div class="button">
+                    <input type="submit" name="Salvar" value="Salvar">
+                  </div>
                 </div>
             </form>
         </div>
+        <div id="ConsultaDeDados">
+          <table id="tblProdutos">
+            <tr>
+              <td id="tblTitulo">
+                <h1>Produtos</h1>
+              </td>
+            </tr>
+            <tr id="tblLinhas">
+            <td class="tblColunas-destaque">Nome</td>
+            <td class="tblColunas-destaque">Preço</td>
+            <td class="tblColunas-destaque">Desconto</td>
+            <td class="tblColunas-destaque">Destaque</td>
+            <td class="tblColunas-destaque">Descrição</td>
+            <td class="tblColunas-destaque">Foto</td>
+            <td class="tblColunas-destaque">Opções</td>
+            </tr>
+
+            <?php
+            //Import do arquivo da controller para solicitar a listagem dos dados
+            require_once('controller/controllerProdutos.php');
+
+            //Chama a função que vai retornar os dados de produtos
+            $listProduto = listarProduto();
+
+            //Estrutura de repetição para retornar os dados do array e printar na tela
+            foreach($listProduto as $item) {
+          ?>
+
+          <tr id="tblLinhas">
+            <td class="tblColunas-registros"><?=$item['nome']?></td>
+            <td class="tblColunas-registros"><?=$item['preco']?></td>
+            <td class="tblColunas-registros"><?=$item['desconto']?></td>
+            <td class="tblColunas-registros"><?=$item['destaque'] == 1?"Em destaque!":null?></td>
+            <td class="tblColunas-registros"><?=$item['descricao']?></td>
+            <!-- Fazer aqui a 'foto'. -->
+            <td class="tblColunas-registros">
+              <a href="router.php?component=produtos&action=buscar&id=<?= $item['id'] ?>">
+                <img src="./img/editar.png" alt="Editar">
+              </a>
+              <a onclick="return confirm('Deseja realmente excluir esse item?');" href="router.php?component=produtos&action=deletar&id=<?= $item['id'] ?>">
+                <img src="./img/excluir.png" alt="Excluir">
+              </a>
+            </td>
+          </tr>
+
+          <?php
+            }
+          ?>
+
+          </table>
+        </div>
     </div>
-    <footer>
-      <div class="copyright">
-        <p>© Copyright 2022</p>
-        <p>Todos os direitos reservados - Política de Privacidade</p>
-      </div>
-      <div class="versao">
-        <p>Desenvolvido por Florbela</p>
-        <p>Versão 1.0.0</p>
-      </div>
-    </footer>
   </body>
+  <footer>
+    <div class="copyright">
+      <p>© Copyright 2022</p>
+      <p>Todos os direitos reservados - Política de Privacidade</p>
+    </div>
+    <div class="versao">
+      <p>Desenvolvido por Florbela</p>
+      <p>Versão 1.0.0</p>
+    </div>
+  </footer>
 </html>

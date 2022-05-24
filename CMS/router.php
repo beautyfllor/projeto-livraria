@@ -44,6 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' || $_SERVER['REQUEST_METHOD'] == 'GET')
                     echo ("<script>alert('" . $resposta["message"] . "'); window.location.href = 'dashboard-contatos.php' </script>");
                 }
             }
+            break;
         case 'CATEGORIAS';
 
             //Import da controller de Categorias
@@ -113,6 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' || $_SERVER['REQUEST_METHOD'] == 'GET')
                 } else if (is_array($resposta))
                     echo ("<script>alert('" . $resposta["message"] . "'); window.history.back(); </script>");
             }
+            break;
         case 'USUARIOS';
 
             //Import da controller de Usuários
@@ -182,6 +184,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' || $_SERVER['REQUEST_METHOD'] == 'GET')
                 } else if (is_array($resposta))
                 echo ("<script>alert('" . $resposta["message"] . "'); window.history.back(); </script>");
             }
+            break;
         case 'PRODUTOS';
 
             //Import da controller de Produtos
@@ -251,7 +254,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' || $_SERVER['REQUEST_METHOD'] == 'GET')
                 } else if (is_array($resposta))
                 echo ("<script>alert('" . $resposta["message"] . "'); window.history.back(); </script>");
             }
-
-        break;
+            break;
     }
 }

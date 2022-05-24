@@ -150,7 +150,7 @@
             <td class="tblColunas-registros"><?=$item['nome']?></td>
             <td class="tblColunas-registros"><?=$item['preco']?></td>
             <td class="tblColunas-registros"><?=$item['desconto']?></td>
-            <td class="tblColunas-registros"><?=$item['destaque'] == 1?"Em destaque!":null?></td>
+            <td class="tblColunas-registros"><?=$item['destaque'] == 1?"Sim":"Não"?></td>
             <td class="tblColunas-registros"><?=$item['descricao']?></td>
             <!-- Fazer aqui a 'foto'. -->
             <td class="tblColunas-registros">
